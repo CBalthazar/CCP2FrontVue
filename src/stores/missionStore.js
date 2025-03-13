@@ -5,7 +5,7 @@ export const useMissionStore = defineStore('auth', {
 
   actions: {
     async createMission(title, description, idAssociation) {
-      const response = await fetch('http://localhost/3000/mission/', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/mission/', {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -23,7 +23,7 @@ export const useMissionStore = defineStore('auth', {
     },
 
     async getAllMissions() {
-      const response = await fetch('http://localhost/3000/mission/all', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/mission/all', {
         method: 'GET',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -38,7 +38,7 @@ export const useMissionStore = defineStore('auth', {
     },
 
     async updateMission(id, title, description) {
-      const response = await fetch('http://localhost/3000/mission/', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/mission/', {
         method: 'PUT',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },

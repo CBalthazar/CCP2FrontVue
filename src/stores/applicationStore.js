@@ -5,7 +5,7 @@ export const useUserStore = defineStore('auth', {
 
   actions: {
     async getAllUsers() {
-      const response = await fetch('http://localhost/3000/user/getAllUsers', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/user/getAllUsers', {
         method: 'GET',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },

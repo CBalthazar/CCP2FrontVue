@@ -9,7 +9,7 @@ import SignUpView from '@/views/SignUpView.vue'
 import { useAuthStore } from '@/stores/authentification'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_START_URL),
   routes: [
     {
       path: '/',

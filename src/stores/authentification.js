@@ -5,7 +5,8 @@ export const useAuthStore = defineStore('auth', {
 
   actions: {
     async login(mail, password) {
-      const response = await fetch('http://localhost:3000/user/login', {
+      console.log(import.meta.env.VITE_BASE_START_URL)
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/user/login', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -24,7 +25,7 @@ export const useAuthStore = defineStore('auth', {
     },
 
     async signup(firstname, name, mail, password, role) {
-      const response = await fetch('http://localhost:3000/user/register', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/user/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +47,7 @@ export const useAuthStore = defineStore('auth', {
     },
 
     async logout() {
-      await fetch('http://localhost:3000/user/logout', {
+      await fetch(import.meta.env.VITE_BASE_START_URL + '/user/logout', {
         method: 'POST',
         credentials: 'include',
       })

@@ -5,7 +5,7 @@ export const useuserstore = defineStore('auth', {
 
   actions: {
     async createUser(title, description, idAssociation) {
-      const response = await fetch('http://localhost/3000/user/', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/user/', {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -23,7 +23,7 @@ export const useuserstore = defineStore('auth', {
     },
 
     async getAllusers() {
-      const response = await fetch('http://localhost/3000/user/all', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/user/all', {
         method: 'GET',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -36,7 +36,7 @@ export const useuserstore = defineStore('auth', {
     },
 
     async updateUser(id, title, description) {
-      const response = await fetch('http://localhost/3000/user/', {
+      const response = await fetch(import.meta.env.VITE_BASE_START_URL + '/user/', {
         method: 'PUT',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
