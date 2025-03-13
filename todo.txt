@@ -1,0 +1,2 @@
+front .env => base_url #understand, implement
+store auth add checkAuth function => Front, Back (aussi)
